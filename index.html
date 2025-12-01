@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envato Premium HTML Templates - Professional Web Templates</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0e27;
+            --bg-card: #1a1f3a;
+            --accent-primary: #00d9ff;
+            --accent-secondary: #7b2ff7;
+            --text-primary: #ffffff;
+            --text-secondary: #a8b2d1;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            --gradient-5: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            --gradient-6: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+            --gradient-7: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            --gradient-8: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);
+            --gradient-9: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 20% 50%, rgba(0, 217, 255, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(123, 47, 247, 0.05) 0%, transparent 50%);
+            animation: bgMove 20s ease-in-out infinite;
+        }
+
+        @keyframes bgMove {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(-50px, -50px); }
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            padding: 80px 20px 60px;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            border-radius: 2px;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+
+        /* Template Grid */
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        /* Template Card */
+        .template-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            animation: fadeIn 0.6s ease-out both;
+        }
+
+        .template-card:nth-child(1) { animation-delay: 0.1s; }
+        .template-card:nth-child(2) { animation-delay: 0.2s; }
+        .template-card:nth-child(3) { animation-delay: 0.3s; }
+        .template-card:nth-child(4) { animation-delay: 0.4s; }
+        .template-card:nth-child(5) { animation-delay: 0.5s; }
+        .template-card:nth-child(6) { animation-delay: 0.6s; }
+        .template-card:nth-child(7) { animation-delay: 0.7s; }
+        .template-card:nth-child(8) { animation-delay: 0.8s; }
+        .template-card:nth-child(9) { animation-delay: 0.9s; }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .template-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(123, 47, 247, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+
+        .template-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Visual Placeholder */
+        .card-visual {
+            height: 220px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-visual::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.9;
+            transition: transform 0.5s ease;
+        }
+
+        .template-card:hover .card-visual::before {
+            transform: scale(1.1);
+        }
+
+        /* Individual Gradient Backgrounds */
+        .card-visual.ai-theme::before { background: var(--gradient-1); }
+        .card-visual.arch-theme::before { background: var(--gradient-2); }
+        .card-visual.doctor-theme::before { background: var(--gradient-3); }
+        .card-visual.hotel-theme::before { background: var(--gradient-4); }
+        .card-visual.portfolio-theme::before { background: var(--gradient-5); }
+        .card-visual.real-estate-theme::before { background: var(--gradient-6); }
+        .card-visual.real-estate2-theme::before { background: var(--gradient-7); }
+        .card-visual.fintech-theme::before { background: var(--gradient-8); }
+        .card-visual.construction-theme::before { background: var(--gradient-9); }
+
+        .card-icon {
+            position: relative;
+            z-index: 1;
+            font-size: 64px;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Card Content */
+        .card-content {
+            padding: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .card-description {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        /* Card Buttons */
+        .card-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            flex: 1;
+            min-width: 120px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: var(--text-primary);
+            box-shadow: 0 4px 15px rgba(0, 217, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 217, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-secondary);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--accent-secondary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .template-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            header {
+                padding: 60px 20px 40px;
+            }
+
+            .card-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card-visual {
+                height: 180px;
+            }
+
+            .card-icon {
+                font-size: 48px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation"></div>
+
+    <!-- Header -->
+    <header>
+        <h1>Envato Premium HTML Templates</h1>
+        <p class="subtitle">Built with Pure HTML, CSS & JS for Maximum Performance</p>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+        <div class="template-grid" id="templateGrid">
+            
+            <!-- AI Template -->
+            <div class="template-card" data-template="ai">
+                <div class="card-visual ai-theme">
+                    <div class="card-icon">🤖</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">AI Template</h3>
+                    <p class="card-description">Modern AI & SaaS platform template with futuristic design and advanced animations.</p>
+                    <div class="card-buttons">
+                        <a href="AI template/main-files/index.html" class="btn btn-primary">Live Preview</a>
+                        <a href="https://themeforest.net/user/your-username" class="btn btn-secondary" target="_blank">Details / Purchase</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Architecture -->
+            <div class="template-card" data-template="architecture">
+                <div class="card-visual arch-theme">
+                    <div class="card-icon">🏛️</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Architecture</h3>
+                    <p class="card-description">Elegant architecture & interior design portfolio template with stunning visuals.</p>
+                    <div class="card-buttons">
+                        <a href="Architecture/main-files/index.html" class="btn btn-primary">Live Preview</a>
+                        <a href="https://themeforest.net/user/your-username" class="btn btn-secondary" target="_blank">Details / Purchase</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor -->
+            <div class="template-card" data-template="doctor">
+                <div class="card-visual doctor-theme">
+                    <div class="card-icon">⚕️</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Doctor</h3>
+                    <p class="card-description">Professional healthcare & medical services template with appointment booking features.</p>
+                    <div class="card-buttons">
+                        <a href="Doctor/main-files/index.html" class="btn btn-primary">Live Preview</a>
+                        <a href="https://themeforest.net/user/your-username" class="btn btn-secondary" target="_blank">Details / Purchase</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Booking -->
+            <div class="template-card" data-template="hotel">
+                <div class="card-visual hotel-theme">
+                    <div class="card-icon">🏨</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Hotel Booking</h3>
+                    <p class="card-description">Luxury hotel & resort booking template with reservation system and gallery.</p>
+                    <div class="card-buttons">
+                        <a href="Hotel Bookng/main-files/index.html" class="btn btn-primary">Live Preview</a>
+                        <a href="https://themeforest.net/user/your-username" class="btn btn-secondary" target="_blank">Details / Purchase</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio -->
+            <div class="template-card" data-template="portfolio">
+                <div class="card-visual portfolio-theme">
+                    <div class="card-icon">💼</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Portfolio</h3>
+                    <p class="card-description">Creative portfolio template for designers, developers, and agencies to showcase work.</p>
+                    <div class="card-buttons">
+                        <a href="Portfolio/main-files/index.html" class="btn btn-primary">Live Preview</a>
+                        <a href="https://themeforest.net/user/your-username" class="btn btn-secondary" target="_blank">Details / Purchase</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Real Estate 2 -->
+            <div class="template-card" data-template="realestate2">
+                <div class="card-visual real-estate2-theme">
+                    <div class="card-icon">🏘️</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Real Estate 2</h3>
+                    <p class="card-description">Premium real estate listing template with advanced property search and filters.</p>
+                    <div class="card-buttons">
+                        <a href="Real Estate 2/main-files/index.html" class="btn btn-primary">Live Preview</a>
+                        <a href="https://themeforest.net/user/your-username" class="btn btn-secondary" target="_blank">Details / Purchase</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Real Estate Template -->
+            <div class="template-card" data-template="realestate">
+                <div class="card-visual real-estate-theme">
+                    <div class="card-icon">🏠</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Real Estate Pro</h3>
+                    <p class="card-description">Professional real estate agency template with property management features.</p>
+                    <div class="card-buttons">
+                        <a href="Real-Estate-Template/main-files/index.html" class="btn btn-primary">Live Preview</a>
+                        <a href="https://themeforest.net/user/your-username" class="btn btn-secondary" target="_blank">Details / Purchase</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fintech SaaS -->
+            <div class="template-card" data-template="fintech">
+                <div class="card-visual fintech-theme">
+                    <div class="card-icon">💳</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Fintech SaaS</h3>
+                    <p class="card-description">Modern fintech & banking solution template with data visualization and dashboards.</p>
+                    <div class="card-buttons">
+                        <a href="#" class="btn btn-primary" onclick="alert('Coming Soon!'); return false;">Live Preview</a>
+                        <a href="https://themeforest.net/user/your-username" class="btn btn-secondary" target="_blank">Details / Purchase</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Construction Pro -->
+            <div class="template-card" data-template="construction">
+                <div class="card-visual construction-theme">
+                    <div class="card-icon">🏗️</div>
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Construction Pro</h3>
+                    <p class="card-description">Robust construction & building company template with project showcase galleries.</p>
+                    <div class="card-buttons">
+                        <a href="#" class="btn btn-primary" onclick="alert('Coming Soon!'); return false;">Live Preview</a>
+                        <a href="https://themeforest.net/user/your-username" class="btn btn-secondary" target="_blank">Details / Purchase</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Premium HTML Templates. All rights reserved.</p>
+        <p>Crafted with ❤️ by <a href="https://themeforest.net/user/your-username" target="_blank">Your Envato Username</a></p>
+    </footer>
+
+    <!-- Vanilla JavaScript -->
+    <script>
+        // Card Hover Animation Enhancement
+        const templateCards = document.querySelectorAll('.template-card');
+
+        templateCards.forEach(card => {
+            card.addEventListener('mouseenter', function(e) {
+                // Scale up animation
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+                this.style.boxShadow = '0 20px 60px rgba(0, 217, 255, 0.3)';
+            });
+
+            card.addEventListener('mouseleave', function(e) {
+                // Reset animation
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.boxShadow = 'none';
+            });
+
+            // Add subtle tilt effect on mouse move
+            card.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+                
+                this.style.transform = `translateY(-10px) scale(1.02) perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+
+            card.addEventListener('mouseleave', function(e) {
+                this.style.transform = 'translateY(0) scale(1) perspective(1000px) rotateX(0) rotateY(0)';
+            });
+        });
+
+        // Button Click Animation
+        const buttons = document.querySelectorAll('.btn');
+        
+        buttons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Ripple effect
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.style.position = 'absolute';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(255, 255, 255, 0.5)';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.animation = 'ripple 0.6s ease-out';
+                ripple.style.pointerEvents = 'none';
+                
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+                
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // Add ripple animation dynamically
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Scroll Reveal Animation for cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        templateCards.forEach(card => {
+            observer.observe(card);
+        });
+
+        // Console log for developers
+        console.log('%c🚀 Premium HTML Templates Preview', 'color: #00d9ff; font-size: 20px; font-weight: bold;');
+        console.log('%cBuilt with pure HTML, CSS & JavaScript', 'color: #7b2ff7; font-size: 14px;');
+        console.log(`%cTotal Templates: ${templateCards.length}`, 'color: #43e97b; font-size: 12px;');
+    </script>
+</body>
+</html>
