@@ -1,0 +1,41 @@
+{
+  "rewrites": [
+    // Template 1: AI template
+    {
+      "source": "/AI template/(.*)",
+      "destination": "/AI template/$1"
+    },
+    // Template 2: Architecture
+    {
+      "source": "/Architecture/(.*)",
+      "destination": "/Architecture/$1"
+    },
+    // Template 3: Doctor
+    {
+      "source": "/Doctor/(.*)",
+      "destination": "/Doctor/$1"
+    },
+    // Template 4: Hotel Bookng
+    {
+      "source": "/Hotel Bookng/(.*)",
+      "destination": "/Hotel Bookng/$1"
+    },
+    // Template 5: Portfolio
+    {
+      "source": "/portfolio/(.*)",
+      "destination": "/portfolio/$1"
+    },
+    // Template 6: Real Estate 2
+    {
+      "source": "/Real Estate 2/(.*)",
+      "destination": "/Real Estate 2/$1"
+    },
+    // Template 7: Real-Estate-Template
+    {
+      "source": "/Real-Estate-Template/(.*)",
+      "destination": "/Real-Estate-Template/$1"
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
+}
